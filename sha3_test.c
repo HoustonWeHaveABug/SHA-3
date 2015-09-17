@@ -23,7 +23,7 @@ int print;
 
 	for (i = 0; i < rounds; i++) {
 
-		/* Tests standard hash lengths as per http://csrc.nist.gov/groups/ST/toolkit/examples.html#aHashing */
+		/* Test standard hash lengths as per http://csrc.nist.gov/groups/ST/toolkit/examples.html#aHashing */
 		if (sha3_test(input0bits, 0UL, print) == EXIT_FAILURE) {
 			return EXIT_FAILURE;
 		}
