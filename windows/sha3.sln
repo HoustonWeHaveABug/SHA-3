@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sha3_test", "sha3_test.vcxproj", "{E864B416-21EA-4E54-BC78-F0A09BBAFB49}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "keccak_test", "keccak_test.vcxproj", "{521ECFB2-EAD4-410C-B5C0-C371A7F7D130}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E864B416-21EA-4E54-BC78-F0A09BBAFB49}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E864B416-21EA-4E54-BC78-F0A09BBAFB49}.Debug|Win32.Build.0 = Debug|Win32
+		{E864B416-21EA-4E54-BC78-F0A09BBAFB49}.Release|Win32.ActiveCfg = Release|Win32
+		{E864B416-21EA-4E54-BC78-F0A09BBAFB49}.Release|Win32.Build.0 = Release|Win32
+		{521ECFB2-EAD4-410C-B5C0-C371A7F7D130}.Debug|Win32.ActiveCfg = Debug|Win32
+		{521ECFB2-EAD4-410C-B5C0-C371A7F7D130}.Debug|Win32.Build.0 = Debug|Win32
+		{521ECFB2-EAD4-410C-B5C0-C371A7F7D130}.Release|Win32.ActiveCfg = Release|Win32
+		{521ECFB2-EAD4-410C-B5C0-C371A7F7D130}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
