@@ -148,13 +148,13 @@ uint64_t state[STATE_LINE][STATE_LINE] = { { 0 } }, *hash;
 			for (r = 0; w < hash_bits && r < rate; w += word->bits, r++) {
 				keccak_squeeze(&state[state_y[r]][state_x[r]], word->bits, &hash[s], &b, &s);
 			}
-			if (w < hash_bits) {
+			if (w < hash_bits && last_r) {
 
 				/* Rate not proportional to word length */
-				if (last_r) {
-					keccak_squeeze(&state[state_y[r]][state_x[r]], last_r, &hash[s], &b, &s);
-					w += last_r;
-				}
+				keccak_squeeze(&state[state_y[r]][state_x[r]], last_r, &hash[s], &b, &s);
+				w += last_r;
+			}
+			if (w < hash_bits) {
 				keccak_permute(word, state, rotate);
 			}
 		}
