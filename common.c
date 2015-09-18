@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #include "common.h"
 
 unsigned long padding_length(unsigned long input_bits, unsigned long rate, unsigned long padding_bits) {
@@ -21,6 +22,7 @@ unsigned char *padded, byte;
 unsigned long padded_bytes = modulus_aligned(padded_bits, 8UL) >> 3, alloc_bytes = modulus_aligned(padded_bytes, sizeof(uint64_t)), input_bytes, last_bits;
 	padded = calloc(alloc_bytes, 1UL);
 	if (!padded) {
+		perror("padding");
 		return NULL;
 	}
 	input_bytes = modulus_aligned(input_bits, 8UL) >> 3;

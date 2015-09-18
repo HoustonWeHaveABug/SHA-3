@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "common.h"
 #include "global.h"
 #include "keccak.h"
@@ -56,17 +57,23 @@ unsigned long state_bits, padded_bits;
 
 	/* Check power and Compute word length */
 	if (power > POWER_MAX) {
+		errno = EINVAL;
+		perror("keccak/power");
 		return NULL;
 	}
 	state_bits = STATE_SQUARE*words[power].bits;
 
-	/* Check rate length and hash length */
+	/* Check rate and hash length */
 	if (hash_bits) {
 		if (!rate || rate > state_bits) {
+			errno = EINVAL;
+			perror("keccak/rate");
 			return NULL;
 		}
 	}
 	else {
+		errno = EINVAL;
+		perror("keccak/hash length");
 		return NULL;
 	}
 

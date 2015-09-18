@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "common.h"
 #include "global.h"
 #include "sha3.h"
@@ -38,10 +39,14 @@ unsigned long state_bits = STATE_SQUARE*WORD_BITS_MAX, rate, padded_bits;
 	if (hash_bits && 2*hash_bits < state_bits) {
 		rate = state_bits-2*hash_bits;
 		if (rate%WORD_BITS_MAX) {
+			errno = EINVAL;
+			perror("sha3/rate");
 			return NULL;
 		}
 	}
 	else {
+		errno = EINVAL;
+		perror("sha3/hash length");
 		return NULL;
 	}
 
